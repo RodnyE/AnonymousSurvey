@@ -12,6 +12,7 @@ app.listen(config.PORT, () => {
     console.log("Running in port " + config.PORT);
 });
 
+app.use(require("./router/router.js"));
 
 //
 // Serve static pages
