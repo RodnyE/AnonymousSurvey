@@ -6,6 +6,8 @@ import App from './App'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './styles/main.css'
+import './styles/animations.css'
+
 import './assets/bg.jpg'
 import './assets/FreeSans.otf'
 

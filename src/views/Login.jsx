@@ -21,20 +21,31 @@ export default function LoginView ({show}) {
             
             <div 
                 className="
+                  fade-slide-up
                   p-3 bg-body bg-opacity-25 border-0
                   card d-flex text-center align-items-center
                 "
             >
-                <h3> Hola ! </h3>
-                <p>
-                A usted se le realizara una breve encuesta en la elegirá 
-                cual de estas prendas de vestir le gusta más.
+                <h3 
+                  className="fade-slide-up"
+                  style={{"--animation-delay": ".2s"}}
+                > Hola ! </h3>
+                
+                <p
+                  className="fade-slide-up"
+                  style={{"--animation-delay": ".4s"}}
+                >   A usted se le realizara una breve encuesta en la elegirá 
+                    cual de estas prendas de vestir le gusta más.
                 </p>
                 
               
                 <input 
                     placeholder="Inserte su nombre..." 
-                    className="my-2 form-control"
+                    className="
+                        fade-slide-up
+                        my-2 form-control
+                    "
+                    style={{"--animation-delay": ".6s"}}
                     value={userName}
                     onChange={e => setUserName(e.target.value)}
                 />

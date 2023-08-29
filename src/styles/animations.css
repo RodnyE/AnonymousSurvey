@@ -1,0 +1,21 @@
+
+.fade-slide-up.fade-slide-up {
+    --animation-delay: 0;
+  
+    opacity: 0;
+    
+    animation: fadeSlideUp 1s ease;
+    animation-delay: var(--animation-delay);
+    animation-fill-mode: both;
+}
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
