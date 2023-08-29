@@ -22,3 +22,8 @@ body {
 div {
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: Helvetica;
+    src: url("../assets/FreeSans.otf");
+}
