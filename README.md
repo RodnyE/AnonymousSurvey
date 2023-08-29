@@ -1,15 +1,18 @@
-# 🚀 Welcome to your new awesome project!
+# 👕 Clothing Survey
 
-This project has been created using **webpack-cli**, you can now run
+(personal)
+Web application to conduct a survey about two articles of clothing. This survey aims to collect opinions and preferences from users.
 
-```
-npm run build
-```
+## Technologies
+- Node.js
+- Webpack and React
+- Bootstrap
 
-or
+## Features
+- Allows users to compare and choose between two articles of clothing.
+- Saves users' responses in a database.
 
-```
-yarn build
-```
+## Usage
 
-to bundle your application
+1. Start the server: `npm start`
+2. Open a browser and go to `http://localhost:3000`
