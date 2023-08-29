@@ -33,7 +33,7 @@ export default function SurveyView ({show}) {
     };
     
     return (
-        <View show={show}>
+        <View show={show} className="p-2 d-flex flex-column align-items-center">
             
             <h3> Encuesta </h3>
             <p> 1--- Selecciona un modelo </p>
@@ -55,11 +55,11 @@ export default function SurveyView ({show}) {
                 <p> 2--- ¿De que color lo prefieres? </p>
                 <ul class="list-group">
                     {listColors.map(item => {
-                        return <li className="list-group-item d-flex align-items-center">
-                            <input type="checkbox" className="checkbox"/>
+                        return <label id={item.value} className="list-group-item d-flex align-items-center">
+                            <input label={item.value} type="checkbox" className="checkbox"/>
                             <div style={{background: item.hex}} className="py-2 px-3 m-2 rounded"/>
                             <div> {item.value} </div>
-                        </li>
+                        </label>
                     })}
                 </ul>
             </div>
