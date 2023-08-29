@@ -27,6 +27,7 @@ module.exports = {
         alias: {
             "ui": cfg.SRC + "/ui/ui.js",
             "utils": cfg.SRC + "/utils",
+            "context": cfg.SRC + "/views/_context.jsx",
             "eruda": isProduction ? 
                 cfg.SRC + "/utils/__eruda-fake.js" :
                 "eruda",
@@ -44,7 +45,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'postcss-loader'],
             },
             {
-                test: /\.otf$/i,
+                test: /\.(otf|jpg|png)$/i,
                 type: 'asset',
             },
         ],
