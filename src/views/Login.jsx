@@ -21,7 +21,7 @@ export default function LoginView ({show}) {
             
             <div 
                 className="
-                  p-3 bg-body bg-opacity-50
+                  p-3 bg-body bg-opacity-25 border-0
                   card d-flex text-center align-items-center
                 "
             >
