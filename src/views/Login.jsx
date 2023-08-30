@@ -3,9 +3,10 @@ import { useState, useContext } from "react"
 import { View } from "ui"
 import { GlobalContext } from "context";
 
+
 export default function LoginView ({show}) {
     
-    const {userName, setUserName} = useContext(GlobalContext);
+    const {userNameValue, setUserNameValue} = useContext(GlobalContext);
     const {currentViewName, setCurrentViewName} = useContext(GlobalContext); 
     
     // Function to click button
@@ -25,6 +26,7 @@ export default function LoginView ({show}) {
                   p-3 bg-body bg-opacity-25 border-0
                   card d-flex text-center align-items-center
                 "
+                style={{maxWidth: "500px"}}
             >
                 <h3 
                   className="fade-slide-up"
@@ -46,17 +48,23 @@ export default function LoginView ({show}) {
                         my-2 form-control
                     "
                     style={{"--animation-delay": ".6s"}}
-                    value={userName}
-                    onChange={e => setUserName(e.target.value)}
+                    value={userNameValue}
+                    onChange={e => setUserNameValue(e.target.value)}
                 />
                 
                 <div className="w-100 d-flex justify-content-end">
                     <button
-                        className="btn btn-primary px-3 py-1"
+                        className={
+                            userNameValue !== "" ? 
+                                "btn px-3 py-1 btn-primary" : 
+                                "btn px-3 py-1 disabled" 
+                           
+                        }
                         onClick={handleSubmit}
                     > Ok </button>
                 </div>
             </div>
+            
         </View>
     )
 }
