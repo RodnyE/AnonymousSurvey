@@ -4,6 +4,7 @@ import { GlobalContext } from 'context'
 import LoginView from './views/Login'
 import SurveyView from './views/Survey'
 import SuccessView from './views/Success'
+import ResultView from './views/Result'
 
 import stg from 'utils/storage'
 
@@ -27,6 +28,7 @@ export default function App () {
         <LoginView  show={currentViewName === "LoginView"}/>
         <SurveyView show={currentViewName === "SurveyView"}/> 
         <SuccessView show={currentViewName === "SuccessView"}/> 
+        <ResultView show={currentViewName === "ResultView"}/> 
     </GlobalContext.Provider>
     )
 }

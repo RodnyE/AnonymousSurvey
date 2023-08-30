@@ -3,6 +3,7 @@ import { useState, useContext } from "react"
 import { View } from "ui"
 import { GlobalContext } from "context";
 
+import http from "utils/http"
 
 export default function LoginView ({show}) {
     
@@ -12,6 +13,14 @@ export default function LoginView ({show}) {
     // Function to click button
     const handleSubmit = () => {
         setCurrentViewName("SurveyView");
+        
+        http.post({
+            url: "/result",
+            body: {}
+        })
+        .then(data => {
+            if (data.status) setCurrentViewName("ResultView");
+        })
     }
     
     return (
