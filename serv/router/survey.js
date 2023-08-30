@@ -26,14 +26,14 @@ const survey = async (req, res) => {
         });
     }
 
-    if (password != "monica1234") {
-        return res.json({
-            status: false,
-            data: {
-                message: "WRONG_PASSWORD"
-            }
-        });
-    }
+    //if (password != "monica1234") {
+    //    return res.json({
+    //        status: false,
+    //        data: {
+    //            message: "WRONG_PASSWORD"
+    //        }
+    //    });
+    //}
 
     const nsurvey = await Survey.create({
         user_ip: ip,
