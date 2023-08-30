@@ -34,7 +34,7 @@ export default function App () {
         <LoginView  show={currentViewName === "LoginView"}/>
         <SurveyView show={currentViewName === "SurveyView"}/> 
         <SuccessView show={currentViewName === "SuccessView"}/> 
-        <ResultView show={currentViewName === "ResultView"}/> 
+        {currentViewName === "ResultView" && <ResultView show={true}/>  }
     </GlobalContext.Provider>
     )
 }
