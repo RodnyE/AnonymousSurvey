@@ -10,10 +10,12 @@ import stg from 'utils/storage'
 
 // Application 
 export default function App () {
+    const [userNameValue, setUserNameValue] = useState(stg.getData("name", ""))
+    const [resultData, setResultData] = useState({})
+  
     const [currentViewName, setCurrentViewName] = useState(
         stg.getData("name", false) ? "SuccessView" : "LoginView"
     );
-    const [userNameValue, setUserNameValue] = useState(stg.getData("name", ""))
     
     
     return (
@@ -21,8 +23,12 @@ export default function App () {
         value={{
             currentViewName,
             setCurrentViewName,
+            
             userNameValue,
             setUserNameValue,
+            
+            resultData,
+            setResultData,
         }}
     >
         <LoginView  show={currentViewName === "LoginView"}/>
