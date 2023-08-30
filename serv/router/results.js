@@ -21,8 +21,7 @@ const results = async (req, res) => {
         return res.json({
             status: false,
             data: {
-                message: "WRONG_PASSWORD",
-                error: err
+                message: "WRONG_PASSWORD"
             }
         });
     }
