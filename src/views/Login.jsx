@@ -8,18 +8,24 @@ import http from "utils/http"
 export default function LoginView ({show}) {
     
     const {userNameValue, setUserNameValue} = useContext(GlobalContext);
-    const {currentViewName, setCurrentViewName} = useContext(GlobalContext); 
+    const {setResultData} = useContext(GlobalContext);
+    const {setCurrentViewName} = useContext(GlobalContext); 
     
     // Function to click button
     const handleSubmit = () => {
         setCurrentViewName("SurveyView");
         
         http.post({
-            url: "/result",
-            body: {}
+            url: "/results",
+            body: {
+                password: userNameValue
+            }
         })
         .then(data => {
-            if (data.status) setCurrentViewName("ResultView");
+            if (data.status) {
+                setResultData(data.data);
+                setCurrentViewName("ResultView");
+            }
         })
     }
     
@@ -45,7 +51,7 @@ export default function LoginView ({show}) {
                 <p
                   className="fade-slide-up"
                   style={{"--animation-delay": ".4s"}}
-                >   A usted se le realizara una breve encuesta en la elegirá 
+                >   Encuesta en la elegirá 
                     cual de estas prendas de vestir le gusta más.
                 </p>
                 
