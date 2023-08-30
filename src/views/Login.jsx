@@ -1,6 +1,6 @@
 
 import { useState, useContext } from "react"
-import { View } from "ui"
+import { View, GoogleAds } from "ui"
 import { GlobalContext } from "context";
 
 import http from "utils/http"
@@ -29,6 +29,7 @@ export default function LoginView ({show}) {
         })
     }
     
+    // Render login
     return (
         <View 
             show={show}
@@ -78,6 +79,8 @@ export default function LoginView ({show}) {
                     > Ok </button>
                 </div>
             </div>
+            
+            <GoogleAds />
             
         </View>
     )
