@@ -57,8 +57,7 @@ export default function LoginView ({show}) {
                         className={
                             userNameValue !== "" ? 
                                 "btn px-3 py-1 btn-primary" : 
-                                "btn px-3 py-1 disabled" 
-                           
+                                "btn px-3 py-1 disabled"
                         }
                         onClick={handleSubmit}
                     > Ok </button>
