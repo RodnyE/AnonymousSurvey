@@ -14,7 +14,7 @@ function loadGoogleAdsScript() {
     document.head.appendChild(script);
 }
 
-export default function GoogleAds() {
+export default function GoogleAds () {
     useEffect(() => {
         initializeGoogleAds();
         loadGoogleAdsScript();
@@ -24,9 +24,6 @@ export default function GoogleAds() {
         <ins className="adsbygoogle"
             style={{
                 display:  "inline-block",
-                position: "fixed",
-                bottom:   0, 
-                left:     0,
                 zIndex:   10,
                 width:    "300px",
                 height:   "60px"

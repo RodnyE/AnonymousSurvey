@@ -16,36 +16,37 @@ export default function App () {
     const isNewUser = !stg.existsData("name");
     
     return (
-    <GlobalContext.Provider 
-        value={{
-            currentViewName,
-            setCurrentViewName,
-            
-            userNameValue,
-            setUserNameValue,
-            
-            resultData,
-            setResultData,
-            
-            isNewUser,
-        }}
-    >
+    <div>
         {/*
           * Views components
           */}
-        <LoginView  show={currentViewName === "LoginView"}/>
-        <SurveyView show={currentViewName === "SurveyView"}/> 
-        <SuccessView show={currentViewName === "SuccessView"}/> 
-        {currentViewName === "ResultView" && 
-            <ResultView show={true}/>
-        }
-        
+        <GlobalContext.Provider 
+            value={{
+                currentViewName,
+                setCurrentViewName,
+            
+                userNameValue,
+                setUserNameValue,
+            
+                resultData,
+                setResultData,
+            
+                isNewUser,
+            }}
+        >
+            <LoginView  show={currentViewName === "LoginView"}/>
+            <SurveyView show={currentViewName === "SurveyView"}/> 
+            <SuccessView show={currentViewName === "SuccessView"}/> 
+            {currentViewName === "ResultView" && 
+                <ResultView show={true}/>
+            }
+        </GlobalContext.Provider>
         
         {/* 
           * Google Ads Component
           */}
         <GoogleAds />
         
-    </GlobalContext.Provider>
+    </div>
     )
 }
