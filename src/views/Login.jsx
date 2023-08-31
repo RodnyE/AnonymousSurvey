@@ -2,18 +2,21 @@
 import { useState, useContext } from "react"
 import { View, GoogleAds } from "ui"
 import { GlobalContext } from "context";
-
 import http from "utils/http"
 
+
 export default function LoginView ({show}) {
-    
+    // Global state
     const {userNameValue, setUserNameValue} = useContext(GlobalContext);
-    const {setResultData} = useContext(GlobalContext);
-    const {setCurrentViewName} = useContext(GlobalContext); 
+    const {resultData, setResultData} = useContext(GlobalContext);
+    const {currentViewName, setCurrentViewName} = useContext(GlobalContext); 
+    
+    // Form status
+    const [loginDisabled, setLoginDisabled] = useState(false);
     
     // Function to click button
     const handleSubmit = () => {
-        setCurrentViewName("SurveyView");
+        setLoginDisabled(true);
         
         http.post({
             url: "/results",
@@ -22,18 +25,22 @@ export default function LoginView ({show}) {
             }
         })
         .then(data => {
+            // Redirect to results
             if (data.status) {
                 setResultData(data.data);
                 setCurrentViewName("ResultView");
             }
-        })
+            // Redirect to survey
+            else setCurrentViewName("SurveyView");
+        });
+        
     }
     
     // Render login
     return (
         <View 
-            show={show}
-            className="p-3 d-flex justify-content-center align-items-center"
+          show={show}
+          className="p-3 d-flex justify-content-center align-items-center"
         >   
             
             <div 
@@ -47,36 +54,41 @@ export default function LoginView ({show}) {
                 <h3 
                   className="fade-slide-up"
                   style={{"--animation-delay": ".2s"}}
-                > Hola ! </h3>
+                > Bienvenido </h3>
                 
                 <p
                   className="fade-slide-up"
                   style={{"--animation-delay": ".4s"}}
-                >   Encuesta en la elegirá 
-                    cual de estas prendas de vestir le gusta más.
+                >   Pequeña votación en la que se elegirá
+                    como será el uniforme en un centro educativo X
                 </p>
                 
               
                 <input 
-                    placeholder="Inserte su nombre..." 
-                    className="
-                        fade-slide-up
-                        my-2 form-control
-                    "
-                    style={{"--animation-delay": ".6s"}}
-                    value={userNameValue}
-                    onChange={e => setUserNameValue(e.target.value)}
+                  placeholder="Inserte su nombre..." 
+                  className="fade-slide-up my-2 form-control" 
+                  style={{"--animation-delay": ".6s"}}
+                  disabled={loginDisabled}
+                  value={userNameValue}
+                  onChange={e => setUserNameValue(e.target.value)}
                 />
+                
                 
                 <div className="w-100 d-flex justify-content-end">
                     <button
-                        className={
-                            userNameValue !== "" ? 
-                                "btn px-3 py-1 btn-primary" : 
-                                "btn px-3 py-1 disabled"
-                        }
+                        className={`
+                            btn px-3 py-1 
+                            ${!loginDisabled && userNameValue !== "" ? 
+                                "btn-primary" : "disabled"
+                            }
+                        `}
                         onClick={handleSubmit}
-                    > Ok </button>
+                    > 
+                        Ok
+                        {loginDisabled &&
+                            <div className="ms-1 spinner-border spinner-border-sm" role="status"></div>
+                        }
+                    </button>
                 </div>
             </div>
             
