@@ -6,6 +6,8 @@ import { GlobalContext } from 'context'
 //import SuccessView from './views/Success'
 //import ResultView from './views/Result'
 
+import { GoogleAds } from 'ui'
+
 import stg from 'utils/storage'
 
 // Application 
