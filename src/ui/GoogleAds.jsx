@@ -24,7 +24,6 @@ export default function GoogleAds () {
         <ins className="adsbygoogle"
             style={{
                 display:  "inline-block",
-                zIndex:   10,
                 width:    "300px",
                 height:   "60px"
             }}
