@@ -10,13 +10,10 @@ import stg from 'utils/storage'
 
 // Application 
 export default function App () {
-    const [userNameValue, setUserNameValue] = useState(stg.getData("name", ""))
-    const [resultData, setResultData] = useState({})
-  
-    const [currentViewName, setCurrentViewName] = useState(
-        stg.getData("name", false) ? "SuccessView" : "LoginView"
-    );
-    
+    const [userNameValue, setUserNameValue] = useState("");
+    const [resultData, setResultData] = useState({});
+    const [currentViewName, setCurrentViewName] = useState("LoginView");
+    const isNewUser = !stg.existsData("name");
     
     return (
     <GlobalContext.Provider 
@@ -29,12 +26,16 @@ export default function App () {
             
             resultData,
             setResultData,
+            
+            isNewUser,
         }}
     >
         <LoginView  show={currentViewName === "LoginView"}/>
         <SurveyView show={currentViewName === "SurveyView"}/> 
         <SuccessView show={currentViewName === "SuccessView"}/> 
-        {currentViewName === "ResultView" && <ResultView show={true}/>  }
+        {currentViewName === "ResultView" && 
+            <ResultView show={true}/>
+        }
     </GlobalContext.Provider>
     )
 }

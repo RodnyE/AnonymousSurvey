@@ -1,7 +1,13 @@
 
+import { useContext } from "react"
 import { View } from "ui"
+import { GlobalContext } from "context"; 
+
 
 export default function SuccessView ({show}) {
+    const {isNewUser} = useContext(GlobalContext);
+    
+    
     return (
         <View show={show} className="justify-content-center align-items-center">
             <div 
@@ -10,10 +16,12 @@ export default function SuccessView ({show}) {
                   card d-flex text-center
                 "
             >
-                <h3 
-                  className="fade-slide-up"
-                  style={{"--animation-delay": ".2s"}}
-                > Éxito! Su voto a sido guardado, muchas gracias! </h3>
+                <h3 className="fade-slide-up"> 
+                  {isNewUser ?
+                    "Éxito! Su voto a sido guardado, muchas gracias!" :
+                    "Lo sentimos, ya usted a realizado la votación, gracias por participar!"
+                  }
+                </h3>
             </div>
         </View>
     )

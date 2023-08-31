@@ -7,12 +7,8 @@ import {listModels, listColors} from "../logic/db"
 const models = {}; 
 const colors = {};
     
-listModels.forEach(item => {
-    models[item.value] = item.src;
-});
-listColors.forEach(item => {
-    colors[item.value] = item.hex;
-});
+listModels.forEach(item => {models[item.value] = item.src});
+listColors.forEach(item => {colors[item.value] = item.hex});
 
 
 export default function ResultView ({show}) {

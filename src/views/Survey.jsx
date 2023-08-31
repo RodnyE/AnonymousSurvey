@@ -5,14 +5,15 @@ import { GlobalContext } from "context";
 
 import http from "utils/http"
 import stg from 'utils/storage'
+
 import {listModels, listColors} from "../logic/db"
 
 
 export default function SurveyView ({show}) {
     // Global and local states
+    const {userNameValue, setCurrentViewName} = useContext(GlobalContext);
     const [colorValue, setColorValue] = useState(false);
     const [modelValue, setModelValue] = useState(false);
-    const {userNameValue, setCurrentViewName} = useContext(GlobalContext);
     
     // Some styles 
     const cardClass = "fade-slide-up rounded text-center m-1 p-2 pb-2";
@@ -23,7 +24,6 @@ export default function SurveyView ({show}) {
     
     // Handlers
     const sendSurvey = () => {
-        setCurrentViewName("SuccessView");
         
         http.post({
             url: "/survey",
@@ -34,7 +34,8 @@ export default function SurveyView ({show}) {
             }
         })
         .then(data => {
-            if (data.status) stg.setData("name", userNameValue);
+            stg.setData("name", userNameValue);
+            setCurrentViewName("SuccessView");
         })
         .catch(error => {
             alert("algo explotó");
