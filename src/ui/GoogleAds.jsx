@@ -10,6 +10,7 @@ function loadGoogleAdsScript() {
     const script = document.createElement('script');
     script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573023383028949';
     script.async = true;
+    script.crossorigin = "anonymous";
     document.head.appendChild(script);
 }
 
@@ -20,11 +21,12 @@ export default function GoogleAds() {
     }, []);
 
     return (
-        <ins
-            className="adsbygoogle"
-            style={{ display: 'block' }}
+        <ins class="adsbygoogle"
+            style="display:block"
             data-ad-client="ca-pub-5573023383028949"
+            data-ad-slot="3778386575"
             data-ad-format="auto"
+            data-full-width-responsive="true"
         />
     );
 }
