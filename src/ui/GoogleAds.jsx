@@ -21,6 +21,7 @@ export default function GoogleAds () {
     }, []);
 
     return (
+      <div>
         <ins className="adsbygoogle"
             style={{
                 display:  "inline-block",
@@ -32,5 +33,6 @@ export default function GoogleAds () {
             data-ad-format="auto"
             data-full-width-responsive={true}
         />
+      </div>
     );
 }
