@@ -92,8 +92,6 @@ export default function LoginView ({show}) {
                 </div>
             </div>
             
-            <GoogleAds />
-            
         </View>
     )
 }

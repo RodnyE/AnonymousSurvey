@@ -30,12 +30,22 @@ export default function App () {
             isNewUser,
         }}
     >
+        {/*
+          * Views components
+          */}
         <LoginView  show={currentViewName === "LoginView"}/>
         <SurveyView show={currentViewName === "SurveyView"}/> 
         <SuccessView show={currentViewName === "SuccessView"}/> 
         {currentViewName === "ResultView" && 
             <ResultView show={true}/>
         }
+        
+        
+        {/* 
+          * Google Ads Component
+          */}
+        <GoogleAds />
+        
     </GlobalContext.Provider>
     )
 }

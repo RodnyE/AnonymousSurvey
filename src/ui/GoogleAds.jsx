@@ -22,11 +22,19 @@ export default function GoogleAds() {
 
     return (
         <ins className="adsbygoogle"
-            style={{display:"block"}}
+            style={{
+                display:  "inline-block",
+                position: "fixed",
+                bottom:   0, 
+                left:     0,
+                zIndex:   10,
+                width:    "300px",
+                height:   "60px"
+            }}
             data-ad-client="ca-pub-5573023383028949"
             data-ad-slot="3778386575"
             data-ad-format="auto"
-            data-full-width-responsive="true"
+            data-full-width-responsive={true}
         />
     );
 }
