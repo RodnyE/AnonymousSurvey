@@ -1,12 +1,11 @@
 
 import { useState } from 'react' 
 import { GlobalContext } from 'context'
-//import LoginView from './views/Login'
-//import SurveyView from './views/Survey'
-//import SuccessView from './views/Success'
-//import ResultView from './views/Result'
+import LoginView from './views/Login'
+import SurveyView from './views/Survey'
+import SuccessView from './views/Success'
+import ResultView from './views/Result'
 
-import { GoogleAds } from 'ui'
 
 import stg from 'utils/storage'
 
@@ -22,7 +21,7 @@ export default function App () {
         {/*
           * Views components
           */}
-        {/*<GlobalContext.Provider 
+        <GlobalContext.Provider 
             value={{
                 currentViewName,
                 setCurrentViewName,
@@ -42,12 +41,8 @@ export default function App () {
             {currentViewName === "ResultView" && 
                 <ResultView show={true}/>
             }
-        </GlobalContext.Provider> */}
+        </GlobalContext.Provider>
         
-        {/* 
-          * Google Ads Component
-          */}
-        <GoogleAds />
         
     </div>
     )

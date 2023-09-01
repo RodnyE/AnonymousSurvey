@@ -73,6 +73,8 @@ export default function LoginView ({show}) {
                   onChange={e => setUserNameValue(e.target.value)}
                 />
                 
+                <GoogleAds/>
+                
                 
                 <div className="w-100 d-flex justify-content-end">
                     <button
