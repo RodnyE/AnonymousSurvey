@@ -1,18 +1,21 @@
-# 👕 Clothing Survey
+ 
+# 👕 Clothing Survey Website
 
-(personal)
-Web application to conduct a survey about two articles of clothing. This survey aims to collect opinions and preferences from users.
+Aplicación web para realizar una encuesta sobre dos artículos de ropa. 
+Esta encuesta tiene como objetivo recopilar opiniones y preferencias de los usuarios que accedan a él.
 
-## Technologies
+> [Vista previa🚀](https://acortar.link/YyGRdf)
+
+## Tecnologías
 - Node.js
-- Webpack and React
+- Webpack y React
 - Bootstrap
 
-## Features
-- Allows users to compare and choose between two articles of clothing.
-- Saves users' responses in a database.
+## Características 🤔
+- Permite a los usuarios comparar y elegir entre dos artículos de ropa.
+- Guarda las respuestas de los usuarios en una base de datos.
 
-## Usage
+## Uso 🚀
 
-1. Start the server: `npm start`
-2. Open a browser and go to `http://localhost:3000`
+1. Inicia el servidor: `npm start`
+2. Abre un navegador e ingresa a `http://localhost:3000`
